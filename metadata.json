@@ -1,0 +1,7 @@
+{
+  "name": "ThinkChat: Personal AI Assistant",
+  "description": "An intelligent, all-in-one AI assistant designed to help users write, research, brainstorm, analyze data, and generate content through natural, human-like conversations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
