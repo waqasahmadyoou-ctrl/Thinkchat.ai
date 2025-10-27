@@ -105,7 +105,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ onLogoClick, theme, setTh
   };
 
   const chatHistoryForSidebar = Object.entries(chatSessions)
-    .map(([id, { title }]) => ({ id, title: title || "New Chat" }))
+    // FIX: Use a less strict destructuring and a type assertion to prevent a TypeScript error.
+    // This safely handles potentially malformed chat session data loaded from localStorage.
+    .map(([id, session]) => ({ id, title: (session as { title?: string }).title || "New Chat" }))
     .sort((a, b) => Number(b.id) - Number(a.id)); // Sort by date, newest first
 
   return (
